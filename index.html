@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmalar</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        color: black;
+    }
+
+    body {
+        box-sizing: border-box;
+        background-color: aliceblue;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        
+    }
+
+    .container {
+        min-height: 100vh;
+        display: grid;
+        width: 95%;
+        margin: auto;
+        
+        
+    }
+
+    .auto-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(min(100px, 100%), 1fr));
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    .box {
+        background-color: silver;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box a {
+
+        border: 1px solid white;
+        border-radius: 25%;
+    }
+
+    h1 {
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        margin: auto;
+        font-size: 3.5rem;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>ALGORİTMA ÖRNEKLERİ</h1>
+        <div class="auto-grid">
+
+            <div class="box">
+                <a href="./Tek-Cift/oddOrEven.html">Tek veya Çift</a>
+            </div>
+            <div class="box">
+                <a href="./Ortadaki-Sayı/middleNumber.html">Ortadaki Sayı</a>
+            </div>
+            <div class="box">
+                <a href="./Tekler-Çiftler-Toplam/sumOfOddAndEven.html">Tekler Çiftler Toplamı</a>
+            </div>
+            <div class="box">
+                <a href="./Aradaki-Sayılar/listNumber.html">Aradaki Sayılar</a> 
+            </div>
+            <div class="box">
+                <a href="./Fibonacci/fibonacci.html">Fibonacci</a>
+            </div>
+            <div class="box">
+                <a href="./Tam Bölenler/divisors.html">Tam Bölenler</a>
+            </div>
+            <div class="box">
+                <a href="">Ortalama Hesaplama</a>
+            </div>
+            <div class="box">
+                <a href="./OBEB/obeb.html">OBEB</a>
+            </div>
+            <div class="box">
+                <a href="">Bölme Olmadan Bölüm</a>
+            </div>
+            <div class="box">
+                <a href="">Çarpma Olmadan Çarpım</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

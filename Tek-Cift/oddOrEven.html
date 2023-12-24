@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="./images/google icon.png" />
+    <title>Google</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-container > * {
+            padding: 1rem;
+        }
+
+
+        input {
+            width: 580px;
+            height: 45px;
+            padding-left: 50px;
+            font-size: 16px;
+            border-radius: 45px;
+            border: 1px solid #d3d3d3;
+        }
+
+        input:hover {
+            box-shadow : 0 1px 3px 1px rgba(201, 201, 201, 0.5)
+        }
+
+        input:focus {
+            outline : none;
+        }
+
+        .keyboard {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 8px;
+            left: 460px;
+            cursor: pointer;
+        }
+
+
+
+        button {
+            border: 1px solid transparent;
+            padding: 20px 12px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        button:hover {
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 4rem;
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        #result {
+            margin-top: 5rem;
+            font-size: 3rem;
+            color: red;
+        }
+
+        @media (max-width: 767px) {
+            input {
+                width: 300px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            #result {
+                font-size: 2rem;
+            }
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+    <section class="search-container">
+
+            <h1>Tek Mi Çift Mi</h1>
+
+            <label for="numberInput">Tek Çift Kontrolü İçin Sayı Girişi Yapın:</label>
+            <input type="number" id="numberInput" placeholder="Sayı Giriniz">
+            
+            <a href="/index.html"><button id="home" type="button">Ana Sayfa</button></a>
+            <a href="./flowchartOddEven.html"><button id="flowchart" type="button">Flowchart</button></a>
+            <button onclick="oddOrEven()">Kontrol Et</button>
+            
+            <div id="result"></div>
+        
+    </section>
+
+    <script>
+        function oddOrEven() {
+            var numberInput = document.querySelector("#numberInput").value;
+            var resultElement = document.querySelector("#result")
+
+            if (isNaN(numberInput)) {
+                resultElement.innerHTML = 'Lütfen Geçerli Sayı Girişi Yapın';
+            } else {
+                var number = Number(numberInput);
+                var result;
+                if (number % 2 === 0) {
+                    result = 'ÇİFT';
+                } else {
+                    result = 'TEK';
+                }
+                resultElement.textContent = number + '  ' + result + ' sayıdır.';
+            }
+        }
+    </script>
+    
+</body>
+</html>

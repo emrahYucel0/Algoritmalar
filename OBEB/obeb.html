@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="./images/google icon.png" />
+    <title>Google</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-container > * {
+            padding: 1rem;
+        }
+
+
+        input {
+            width: 580px;
+            height: 45px;
+            padding-left: 50px;
+            font-size: 16px;
+            border-radius: 45px;
+            border: 1px solid #d3d3d3;
+        }
+
+        input:hover {
+            box-shadow : 0 1px 3px 1px rgba(201, 201, 201, 0.5)
+        }
+
+        input:focus {
+            outline : none;
+        }
+
+        .keyboard {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 8px;
+            left: 460px;
+            cursor: pointer;
+        }
+
+
+
+        button {
+            border: 1px solid transparent;
+            padding: 20px 12px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        button:hover {
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 4rem;
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        #result {
+            margin-top: 5rem;
+            font-size: 2rem;
+            color: red;
+        }
+
+        @media (max-width: 767px) {
+            input {
+                width: 300px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            #result {
+                font-size: 1rem;
+            }
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+    <section class="search-container">
+
+            <h1>OBEB</h1>
+
+            <label for="numberInput">İki adet sayı girişi yapınız:</label>
+            <input type="text" id="numberInput"  placeholder="Örnek: 5 90 " required>
+            
+            <a href="/index.html"><button id="home" type="button">Ana Sayfa</button></a>
+            <a href="./flowchartObeb.html"><button id="flowchart" type="button">Flowchart</button></a>
+            <button onclick="findOBEB()">Kontrol Et</button>
+            
+            <div id="result"></div>
+        
+    </section>
+
+    <script>
+        function findOBEB() {
+            let numberInput = document.querySelector("#numberInput").value.split(" ");
+            let resultElement = document.querySelector("#result");
+
+            let obeb = calculateGCD(numberInput[0], numberInput[1]);
+
+            resultElement.textContent = "OBEB: " + obeb;
+
+            function calculateGCD(a, b) {
+            if (b === 0) {
+                return a;
+            } else {
+                return calculateGCD(b, a % b);
+            }
+        }            
+        }
+    </script>
+    
+</body>
+</html>
